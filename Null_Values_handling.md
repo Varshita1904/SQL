@@ -21,22 +21,23 @@ Any comparison with NULL results in **UNKNOWN**.
 ```sql
 COUNT(column)   -- ignores NULL values
 COUNT(*)        -- counts all rows
-
----
+```
 
 ## IS NULL and IS NOT NULL
 
-Use `IS NULL` and `IS NOT NULL` to check missing values in SQL.
-
----
-
-### Check for NULL values
-
 ```sql
+-- IS NULL
 SELECT *
 FROM employees
 WHERE salary IS NULL;
+```
 
+```sql
+-- IS NOT NULL
+SELECT *
+FROM employees
+WHERE salary IS NOT NULL;
+```
 
 ### What is COALESCE?
 
@@ -48,7 +49,7 @@ WHERE salary IS NULL;
 
 ```sql
 COALESCE(expr1, expr2, expr3, ...)
-
+```
 
 ### What is NULLIF?
 
@@ -60,6 +61,7 @@ COALESCE(expr1, expr2, expr3, ...)
 
 ```sql
 NULLIF(expression1, expression2)
+```
 
 ### Example: ON vs WHERE Condition with NULL Values
 
@@ -90,7 +92,7 @@ FROM employees e
 LEFT JOIN departments d
 ON e.dept_id = d.dept_id
 AND d.dept_name = 'HR';
-
+```
 
 | emp_id | emp_name | dept_name |
 |------|----------|----------|
@@ -107,7 +109,7 @@ FROM employees e
 LEFT JOIN departments d
 ON e.dept_id = d.dept_id
 WHERE d.dept_name = 'HR';
-
+```
 
 | emp_id | emp_name | dept_name |
 |------|----------|----------|
